@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Trendme0</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <a class="brand" href="#">Trendin.me</a>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/posts">Home</a>
+          </li>
+          <li>
+            <a href="#">Tour</a>
+          </li>
+          <li>
+            <a href="#">About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+<%= yield %>
+
+
+    </div>
+    <div class="container-fluid container-fluid-2"></div>
+    <div class="container-fluid container-fluid-3">
+      <div class="container">
+        <div class="row-fluid">
+          <span class="span12">
+            <div class="pull-left">
+              <p>© AwesomeCo</p>
+            </div>
+            <ul class="nav nav-pills pull-right">
+              <li>
+                <a href="#">About</a>
+              </li>
+              <li>
+                <a href="#">Privacy</a>
+              </li>
+              <li>
+                <a href="#">Terms Of Service</a>
+              </li>
+            </ul>
+          </span>
+        </div>
+      </div>
+    </div>
+</body>
+</html>

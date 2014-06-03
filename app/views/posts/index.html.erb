@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Limelight|Flamenco|Federo|Yesteryear|Josefin Sans|Spinnaker|Sansita One|Handlee|Droid Sans|Oswald:400,300,700" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+      /* No content under the fixed bootstrap header. */
+      body {
+        padding-top: 60px;
+      }
+    </style>
+
+    <title>rahul</title>
+  </head>
+  
+  <body>
+
+    <div class="container-fluid container-fluid-1">
+
+      <div class="row border-black" >
+          <div class="col-md-5 border-black scrollbar force-overflow" id="style-3">
+            
+                      <!-- filters division -->
+            <div class="border-black bg-info">
+              <div class="row border-black">
+                <span class="text-center"><h1>FILTERS</h1></span>
+  
+              </div>
+
+            </div>
+            <div class="left-pics-column">
+              <%= image_tag("ajax-loader.gif", :id => "loading-indicator", :style => "display: none", :alt => "loading..") %>
+              <%= render :partial => "left_column" %>
+            </div>
+          </div>
+<!-- right side column for post details -->
+          <div class="col-md-7 border-black scrollbar force-overflow right-content-column" id="style-3">
+            initial text without show action because of nil id
+          </div>
+      </div>
+    </div>   
+
+     
+  </body>
+
+</html>

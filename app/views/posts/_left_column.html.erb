@@ -1,0 +1,27 @@
+
+            <div class="border-black">
+            <div class="bg-success" id="paginator"><%= paginate @posts, :remote => true %></div>
+               <div class="row">
+                
+<!-- listing images from database dinamically -->
+
+                    <% @posts.each do |post| %>                 
+                      <div class="col-xs-3 pic-column-mod">
+                        <a href="<%= url_for(post)  %>" data-remote="true" class="thumbnail">
+                            <%= image_tag post.image.url(:medium) %>
+                        </a>
+                      </div>                         
+                    <% end %>
+
+                    <% @posts.each do |post| %>                 
+                      <div class="col-xs-3 pic-column-mod">
+                        <a href="<%= url_for(post)  %>" data-remote="true" class="thumbnail">
+                            <%= image_tag post.image.url(:medium) %>
+                        </a>
+                      </div>                         
+                    <% end %>
+                   
+              </div>
+            </div>
+            <div class="bg-success" id="paginator"><%= paginate @posts, :remote => true %></div>
+            m

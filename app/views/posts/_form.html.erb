@@ -1,0 +1,67 @@
+<%= form_for(@post) do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :heading %><br>
+    <%= f.text_field :heading %>
+  </div>
+
+  <div class="field">
+    <%= f.label :location %><br>
+    <%= f.text_field :location %>
+  </div>
+
+  <div class="field">
+    <%= f.label :photographer_name %><br>
+    <%= f.text_field :photographer_name %>
+  </div>
+      
+  <div class="field">
+    <%= f.label :girl_name %><br>
+    <%= f.text_field :girl_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :girl_occupation %><br>
+    <%= f.text_field :girl_occupation %> :html => {:multipart => true}
+  </div>
+
+  <div class="field">
+    <%= f.label :contet %><br>
+    <%= f.text_field :content %>
+  </div>    
+
+  <div class="field">
+    <%= f.label :votes %><br>
+    <%= f.text_field :votes %>
+  </div>
+
+  <div class="field">
+    <%= f.label :comments %><br>
+    <%= f.text_field :comments %>
+  </div>  
+
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
+  </div>
+
+  <div class="field">
+    <%= f.label :caption %><br>
+    <%= f.text_field :caption %>
+  </div>  
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
