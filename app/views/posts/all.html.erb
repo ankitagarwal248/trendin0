@@ -20,20 +20,20 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr>
-        <td><%= post.heading %></td>
-        <td><%= image_tag post.image.url(:medium) %></td>
-        <td><%= post.caption %></td>
-        <td><%= post.location %></td>
-        <td><%= post.photographer_name %></td>
-        <td><%= post.girl_name %></td>
-        <td><%= post.girl_occupation %></td>
-        <td><%= post.content %></td>
-        <td><%= post.votes %></td>
-        <td><%= post.comments %></td>
+        <td><%#= post.heading %></td>
+        <td><%#= image_tag post.image.url(:medium) %></td>
+        <td><%#= post.caption %></td>
+        <td><%#= post.location %></td>
+        <td><%#= post.photographer_name %></td>
+        <td><%#= post.girl_name %></td>
+        <td><%#= post.girl_occupation %></td>
+        <td><%#= post.content %></td>
+        <td><%#= post.votes %></td>
+        <td><%#= post.comments %></td>
 
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%#= link_to 'Show', post %></td>
+        <td><%#= link_to 'Edit', edit_post_path(post) %></td>
+        <td><%#= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -43,4 +43,53 @@
 
 <%= link_to 'New Post', new_post_path %>
 
-<div class="well"> hiiii</div>
+<!-- Nav tabs -->
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+  <li><a href="#profile" data-toggle="tab">Profile</a></li>
+  <li><a href="#messages" data-toggle="tab">Messages</a></li>
+  <li><a href="#settings" data-toggle="tab">Settings</a></li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+  <div class="tab-pane active" id="home">Some content for home tab Some content for home tab Some content for home tab Some content for home tab</div>
+  <div class="tab-pane" id="profile">Some content for profile tab Some content for profile tab Some content for profile tab Some content for profile tab</div>
+  <div class="tab-pane" id="messages">Some content for messages tab Some content for messages tab Some content for messages tab Some content for messages tab</div>
+  <div class="tab-pane" id="settings">Some content for messages tab Some content for messages tab Some content for messages tab</div>
+</div>
+
+
+<ul class="nav nav-tabs">
+  <% @posts.each do |post| %>
+    <% if @posts.first.heading == post.heading %>
+      <li class="active"><a href="#home" data-toggle="tab"><%=  post.heading  %></a></li>
+    <% else %>
+      <li><a href="#profile" data-toggle="tab"><%=  post.heading  %></a></li>  
+    <% end %>  
+  <% end %>
+</ul>
+
+
+<% @posts.each do |post| %>
+  <% if @posts.first.heading == post.heading %>
+      <%= @posts.first.heading %>
+  <% else %>
+      <%= post.heading %>
+  <% end %>
+<% end %>
+
+
+
+<button class="scripttest"><%= @posts.count %></button>
+<script>
+
+   $(".scripttest").click(function(event){
+      alert("Say Hello!!");
+    });
+
+  $('#myTab a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+  })
+</script>
